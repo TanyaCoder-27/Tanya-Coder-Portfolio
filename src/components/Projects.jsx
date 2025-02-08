@@ -13,7 +13,7 @@ const projects = [
   },
   {
     id: 2,
-    name: "Online Healthcare Service ",
+    name: "Online Healthcare Service (HealthGenie)",
     technologies: "Python, Streamlit, GenAI",
     image: RoboImage,
     github: "https://github.com/TanyaCoder-27/Online-Healthcare-Service-App",
