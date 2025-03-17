@@ -1,5 +1,5 @@
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-//import { SiGeeksforGeeks, SiLeetcode } from "react-icons/si"; // Importing icons for GeeksforGeeks and LeetCode
+
 
 const Footer = () => {
   return (

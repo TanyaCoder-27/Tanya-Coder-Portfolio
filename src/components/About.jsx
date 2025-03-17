@@ -14,9 +14,8 @@ const About = () => {
           />
           <div className="flex-1">
             <p className="text-lg mb-8">
-              I am a passionate computer science student with a focus on building
-              modern and responsive web applications. With interest in Web Development, Data Analysis and GenAI,
-               I am always looking for new opportunities to learn and grow.
+            Hardworking and self-motivated individual with strong time management skills, creativity, and a positive mindset. Seeking to leverage my
+            ability to learn quickly and contribute to impactful projects while further developing my skills.
             </p>
             <div className="space-y-4">
               <div className="flex items-center">
