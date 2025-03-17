@@ -34,7 +34,8 @@ const Navbar = ({ contactRef,theme}) => {
         <div className='space-x-6 hidden sm:flex'>
           <a href="#home" className='hover:text-gray-400'>Home</a>
           <a href="#about" className='hover:text-gray-400'>About Me</a>
-          <a href="#service" className='hover:text-gray-400'>Skills</a>
+          <a href="#skills" className='hover:text-gray-400'>Skills</a>
+
           <a href="#project" className='hover:text-gray-400'>Projects</a>
           <a href="#contact" className='hover:text-gray-400'>Contact</a>
         </div>
