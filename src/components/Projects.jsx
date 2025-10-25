@@ -1,6 +1,8 @@
 import SuccessSparkImage from "../assets/d2.jpg";
 import RoboImage from "../assets/onhealth.png";
 import PyImage from "../assets/maxresdefault.jpg";
+import TripImage from "../assets/trip.png";
+import LaneImage from "../assets/lane.png";
 
 const projects = [
   {
@@ -26,6 +28,22 @@ const projects = [
     image: PyImage,
     github: "https://github.com/TanyaCoder-27/DataAnalysisWithPython",
     description: "Proficient in using Pandas, NumPy, and Matplotlib for data manipulation, analysis, and visualization. Experienced with web scraping using Selenium and Beautiful Soup for HTML parsing. Successfully implemented a Convolutional Neural Network (CNN) model for brain tumor identification and utilized TensorFlow/Keras for testing skin cancer, including model development, training, and evaluation. Additionally, worked on face-mask detection using OpenCV and generative AI projects using Google Gemini LLMs, such as information gain through Q&A from multiple PDFs and images.",
+  },
+  {
+    id: 4,
+    name: "AI Trip Planner (Travel Buddy)",
+    technologies: "Frontend: HTML, CSS, JavaScript, jQuery, Bootstrap Backend: Python, Django Database: SQLite API: Google Gemini API",
+    image: TripImage,
+    github: "https://github.com/TanyaCoder-27/Travel_Buddy_AI_Trip_Planner?tab=readme-ov-file",
+    description: "AI Trip Planner is an advanced travel planning system that utilizes the Google Gemini API to provide personalized trip suggestions. Whether you're traveling solo, with friends, a partner, or family, this smart planner tailors your itinerary based on location, duration, and mood.",
+  },
+  {
+    id: 5,
+    name: "Vehicle Speed Detection (LaneVision)",
+    technologies: "Python, Django, SQLite, YOLOv8, OpenCV, NumPy, HTML/CSS/JS, Bootstrap",
+    image: LaneImage,
+    github: "https://github.com/TanyaCoder-27/LaneVision",
+    description: "LaneVision is a cutting-edge vehicle speed detection system that leverages state-of-the-art computer vision and AI technologies to monitor traffic in real-time. Built with Django and powered by YOLOv8, it provides accurate speed measurements, vehicle tracking, and comprehensive traffic analytics.",
   },
 ];
 

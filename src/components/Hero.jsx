@@ -7,7 +7,7 @@ const Hero = ({ contactRef }) => {
   };
 
   const openResume = () => {
-    window.open('https://drive.google.com/file/d/18z0u_ChochuPt8trjCBN4WHK0yYGqPwJ/view?usp=sharing', '_blank');
+    window.open('https://drive.google.com/file/d/1nV37q9s4_Saoc4VHgStDI9iHaTTOnqTX/view?usp=sharing', '_blank');
   };
 
   return (

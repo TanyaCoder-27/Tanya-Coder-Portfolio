@@ -1,23 +1,36 @@
 import { forwardRef, useState } from 'react';
-import emailjs from 'emailjs-com';
+import { useForm, ValidationError } from '@formspree/react';
 
 import { FaEnvelope, FaMapMarkedAlt, FaPhone } from 'react-icons/fa';
 
 const Contact = forwardRef((props, ref) => {
+  const [state, handleSubmit] = useForm("xnnoawqw");
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [errors, setErrors] = useState({});
 
-  const sendEmail = (e) => {
+  const validateForm = () => {
+    const newErrors = {};
+    if (!name.trim()) newErrors.name = 'Name is required';
+    if (!email.trim()) newErrors.email = 'Email is required';
+    else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = 'Email is invalid';
+    if (!message.trim()) newErrors.message = 'Message is required';
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const onSubmit = async (e) => {
     e.preventDefault();
-    emailjs.send('service_4xtohnd', 'template_99wn9fc', { name, email, message: `From: ${email}\n\nMessage: ${message}` }, '-rCWyXlIQbA9hHrNy')
+    if (!validateForm()) return;
 
-      .then((response) => {
-        console.log('Email sent successfully!', response.status, response.text);
-      })
-      .catch((err) => {
-        console.error('Failed to send email. Error:', err);
-      });
+    await handleSubmit(e);
+    if (state.succeeded) {
+      setName('');
+      setEmail('');
+      setMessage('');
+      setErrors({});
+    }
   };
 
   Contact.displayName = 'Contact';
@@ -44,24 +57,65 @@ const Contact = forwardRef((props, ref) => {
             </div>
           </div>
           <div className='flex-1 w-full'>
-              <form className='space-y-4' onSubmit={sendEmail}>
-
+            {state.succeeded && (
+              <div className="mb-4 p-4 bg-green-800 text-green-200 rounded">
+                Thanks for your message! I'll get back to you soon.
+              </div>
+            )}
+            {state.errors && state.errors.length > 0 && (
+              <div className="mb-4 p-4 bg-red-800 text-red-200 rounded">
+                Something went wrong. Please try again.
+              </div>
+            )}
+            <form className='space-y-4' onSubmit={onSubmit}>
               <div>
                 <label htmlFor="name" className='block mb-2'>Your Name</label>
-                <input type="text" className='w-full p-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:border-green-400' placeholder='Enter Your Name' value={name} onChange={(e) => setName(e.target.value)} />
-
+                <input
+                  type="text"
+                  name="name"
+                  className={`w-full p-2 rounded bg-gray-800 border ${errors.name ? 'border-red-500' : 'border-gray-600'} focus:outline-none focus:border-green-400`}
+                  placeholder='Enter Your Name'
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  required
+                />
+                {errors.name && <p className="text-red-400 text-sm mt-1">{errors.name}</p>}
               </div>
               <div>
                 <label htmlFor="email" className='block mb-2'>Email</label>
-                <input type="text" className='w-full p-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:border-green-400' placeholder='Enter Your Email' value={email} onChange={(e) => setEmail(e.target.value)} />
-
+                <input
+                  type="email"
+                  name="email"
+                  className={`w-full p-2 rounded bg-gray-800 border ${errors.email ? 'border-red-500' : 'border-gray-600'} focus:outline-none focus:border-green-400`}
+                  placeholder='Enter Your Email'
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                {errors.email && <p className="text-red-400 text-sm mt-1">{errors.email}</p>}
+                <ValidationError prefix="Email" field="email" errors={state.errors} />
               </div>
               <div>
                 <label htmlFor="message" className='block mb-2'>Message</label>
-                <textarea className='w-full p-2 rounded bg-gray-800 border border-gray-600 focus:outline-none focus:border-green-400' rows="5" placeholder='Enter Your Message' value={message} onChange={(e) => setMessage(e.target.value)} />
-
+                <textarea
+                  name="message"
+                  className={`w-full p-2 rounded bg-gray-800 border ${errors.message ? 'border-red-500' : 'border-gray-600'} focus:outline-none focus:border-green-400`}
+                  rows="5"
+                  placeholder='Enter Your Message'
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  required
+                />
+                {errors.message && <p className="text-red-400 text-sm mt-1">{errors.message}</p>}
+                <ValidationError prefix="Message" field="message" errors={state.errors} />
               </div>
-              <button className='bg-gradient-to-r from-purple-500 to-pink-500 text-white transform transition-transform duration-300 hover:scale-105 px-8 py-2 rounded-full'>Send Message</button>
+              <button
+                type="submit"
+                disabled={state.submitting}
+                className='bg-gradient-to-r from-purple-500 to-pink-500 text-white transform transition-transform duration-300 hover:scale-105 px-8 py-2 rounded-full disabled:opacity-50 disabled:cursor-not-allowed'
+              >
+                {state.submitting ? 'Sending...' : 'Send Message'}
+              </button>
             </form>
           </div>
         </div>
