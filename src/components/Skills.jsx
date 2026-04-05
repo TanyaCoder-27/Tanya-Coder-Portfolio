@@ -1,5 +1,6 @@
 const skills = {
   technical: [
+    "Automation Testing: Selenium, TestNG, RestAssured, Cucumber BDD, Java, Page Object Model (POM), Maven, ExtentReports, Allure Reports",
     "Frontend Development: HTML, CSS, JavaScript, React, Tailwind CSS, Bootstrap, Firebase",
     "Data Analysis & Visualization: Python, Pandas, NumPy, Matplotlib, Seaborn, Streamlit, Power BI, MySQL",
     "Integrating GenAI LLMs in applications",

@@ -3,10 +3,28 @@ import RoboImage from "../assets/onhealth.png";
 import PyImage from "../assets/maxresdefault.jpg";
 import TripImage from "../assets/trip.png";
 import LaneImage from "../assets/lane.png";
+import AutomationFrameworkImage from "../assets/Automation testing framework in action.png";
+import SeleniumFrameworkImage from "../assets/Selenium test automation framework overview.png";
 
 const projects = [
   {
     id: 1,
+    name: "Precision Unified Automation Framework",
+    technologies: "Java, Selenium, RestAssured, TestNG, Cucumber, Maven, ExtentReports, Allure Reports",
+    image: AutomationFrameworkImage,
+    github: "https://github.com/TanyaCoder-27/Hybrid_Test_Automation_Framework",
+    description: "Developed a scalable hybrid test automation framework using Java, Selenium WebDriver, RestAssured, and TestNG with Page Object Model (POM). Designed a multi-module Maven architecture supporting both UI and API testing with a clean, maintainable structure. Implemented cross-browser automation (Chrome, Edge, Firefox) using Browser Factory pattern. Automated UI workflows and API test cases with full requirement coverage and robust validation. Integrated ExtentReports and Allure Reports with screenshots, ensuring detailed reporting and production-ready execution.",
+  },
+  {
+    id: 2,
+    name: "Selenium Test Automation Framework",
+    technologies: "Java, Selenium WebDriver, TestNG, Page Object Model (POM)",
+    image: SeleniumFrameworkImage,
+    github: "https://github.com/TanyaCoder-27/Test_Automation_Project",
+    description: "Built a scalable web automation testing framework using Selenium WebDriver and TestNG with Page Object Model (POM). Automated end-to-end workflows such as login, registration, cart, checkout, and logout with reporting and screenshot capture. Ensured modular and maintainable test design for efficient regression testing.",
+  },
+  {
+    id: 3,
     name: "AI Career Coach (SuccessSpark)",
     technologies: "Next.js, Tailwind CSS, Clerk, PostgreSQL, Prisma, Shadcn, GenAI",
     image: SuccessSparkImage,
@@ -14,7 +32,7 @@ const projects = [
     description: "SuccessSpark is an AI-powered career coaching platform that helps create an intelligent system for resume creation, job-specific cover letter drafting, and personalized interview practice.Users are also able to receive new industry updates every week.",
   },
   {
-    id: 2,
+    id: 4,
     name: "Online Healthcare Service (HealthGenie)",
     technologies: "Python, Streamlit, GenAI",
     image: RoboImage,
@@ -22,7 +40,7 @@ const projects = [
     description: "HealthGenie is an online healthcare service application that has multi-functional features aligned with health-centric goals, including a disease prediction chatbot that analyzes user-input symptoms and provides predicted diseases along with descriptions and precautions. I implemented an SVM model for accurate disease prediction and utilized the Llama 3.3 Inference client LLM to deliver comprehensive disease descriptions. Additionally, I used the Gemini 1.5 Pro LLM to provide precise safety measures from images.",
   },
   {
-    id: 3,
+    id: 5,
     name: "Other Data Analysis Projects",
     technologies: "Python, Pandas, Numpy, Matplotlib, Seaborn, etc.",
     image: PyImage,
@@ -30,7 +48,7 @@ const projects = [
     description: "Proficient in using Pandas, NumPy, and Matplotlib for data manipulation, analysis, and visualization. Experienced with web scraping using Selenium and Beautiful Soup for HTML parsing. Successfully implemented a Convolutional Neural Network (CNN) model for brain tumor identification and utilized TensorFlow/Keras for testing skin cancer, including model development, training, and evaluation. Additionally, worked on face-mask detection using OpenCV and generative AI projects using Google Gemini LLMs, such as information gain through Q&A from multiple PDFs and images.",
   },
   {
-    id: 4,
+    id: 6,
     name: "AI Trip Planner (Travel Buddy)",
     technologies: "Frontend: HTML, CSS, JavaScript, jQuery, Bootstrap Backend: Python, Django Database: SQLite API: Google Gemini API",
     image: TripImage,
@@ -38,7 +56,7 @@ const projects = [
     description: "AI Trip Planner is an advanced travel planning system that utilizes the Google Gemini API to provide personalized trip suggestions. Whether you're traveling solo, with friends, a partner, or family, this smart planner tailors your itinerary based on location, duration, and mood.",
   },
   {
-    id: 5,
+    id: 7,
     name: "Vehicle Speed Detection (LaneVision)",
     technologies: "Python, Django, SQLite, YOLOv8, OpenCV, NumPy, HTML/CSS/JS, Bootstrap",
     image: LaneImage,
